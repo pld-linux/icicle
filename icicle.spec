@@ -1,4 +1,5 @@
 Summary:	A simple streamer for IceCast
+Summary(pl):	Prosty generator strumieni IceCast
 Name:		icicle
 Version:	0.9
 Release:	1
@@ -15,6 +16,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a very simple streamer for IceCast.
+
+%description -l pl
+To jest bardzo prosty generator strumieni IceCast.
 
 %prep
 %setup -q
