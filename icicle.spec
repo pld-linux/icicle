@@ -10,6 +10,8 @@ Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
 Vendor:		Alexander Gräfe <nachtfalke@retrogra.de>
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	libshout-devel
+BuildRequires:	lame-libs-devel
 
 %description
 This is a very simple streamer for IceCast.
@@ -19,6 +21,7 @@ This is a very simple streamer for IceCast.
 
 
 %build
+export CFLAGS="$CFLAGS -I%{_includedir}/lame"
 %configure
 %{__make}
 
