@@ -7,6 +7,7 @@ License:	GPL
 Vendor:		Alexander Gräfe <nachtfalke@retrogra.de>
 Group:		Applications/Graphics
 Source0:	http://icicle.retrogra.de/%{name}-%{version}.tar.gz
+# Source0-md5:	88749e610407a96a370085cdb119c758
 URL:		http://icicle.retrogra.de/
 BuildRequires:	lame-libs-devel
 BuildRequires:	libshout-devel
