@@ -2,16 +2,16 @@ Summary:	A simple streamer for IceCast
 Name:		icicle
 Version:	0.9
 Release:	1
-Source0:	http://icicle.retrogra.de/%{name}-%{version}.tar.gz
-URL:		http://icicle.retrogra.de/
 License:	GPL
+Vendor:		Alexander Gräfe <nachtfalke@retrogra.de>
 Group:		Applications/Graphics
 Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
-Vendor:		Alexander Gräfe <nachtfalke@retrogra.de>
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	libshout-devel
+Source0:	http://icicle.retrogra.de/%{name}-%{version}.tar.gz
+URL:		http://icicle.retrogra.de/
 BuildRequires:	lame-libs-devel
+BuildRequires:	libshout-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a very simple streamer for IceCast.
@@ -19,21 +19,24 @@ This is a very simple streamer for IceCast.
 %prep
 %setup -q
 
-
 %build
-export CFLAGS="$CFLAGS -I%{_includedir}/lame"
+CFLAGS="%{rpmcflags} -I%{_includedir}/lame"
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
 
-%files
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/icicle
-%doc README AUTHORS COPYING ChangeLog INSTALL NEWS TODO 
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+gzip -9nf README AUTHORS ChangeLog NEWS TODO
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/icicle
