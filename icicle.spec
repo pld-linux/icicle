@@ -6,8 +6,6 @@ Release:	1
 License:	GPL
 Vendor:		Alexander Gräfe <nachtfalke@retrogra.de>
 Group:		Applications/Graphics
-Group(de):	Applikationen/Grafik
-Group(pl):	Aplikacje/Grafika
 Source0:	http://icicle.retrogra.de/%{name}-%{version}.tar.gz
 URL:		http://icicle.retrogra.de/
 BuildRequires:	lame-libs-devel
