@@ -1,5 +1,5 @@
 Summary:	A simple streamer for IceCast
-Summary(pl.UTF-8):   Prosty generator strumieni IceCast
+Summary(pl.UTF-8):	Prosty generator strumieni IceCast
 Name:		icicle
 Version:	0.9
 Release:	1
